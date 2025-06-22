@@ -158,12 +158,16 @@ class Ninjas extends Base{
             'weather'=>$weather
         ];
         if(!empty($temp)){
-            $data['day_vidjet']['temp_min'] = asort($temp)[0];
-            $data['day_vidjet']['temp_max'] = arsort($temp)[0];
+            asort($temp);
+            $data['day_vidjet']['temp_min'] = $temp[array_keys($temp)[0]];
+            arsort($temp);
+            $data['day_vidjet']['temp_max'] = $temp[array_keys($temp)[0]];
         }
         if(!empty($feels_like)){
-            $data['day_vidjet']['feels_like_min'] = asort($feels_like)[0];
-            $data['day_vidjet']['feels_like_max'] = arsort($feels_like)[0];
+            asort($feels_like);
+            $data['day_vidjet']['feels_like_min'] = $feels_like[array_keys($feels_like)[0]];
+            arsort($feels_like);
+            $data['day_vidjet']['feels_like_max'] = $feels_like[array_keys($feels_like)[0]];
         }
     }
 
