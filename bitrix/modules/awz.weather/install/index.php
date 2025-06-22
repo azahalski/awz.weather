@@ -150,12 +150,14 @@ class awz_weather extends CModule
     function InstallFiles()
     {
         CopyDirFiles($_SERVER['DOCUMENT_ROOT']."/bitrix/modules/".$this->MODULE_ID."/install/components/weather.config.permissions/", $_SERVER['DOCUMENT_ROOT']."/bitrix/components/awz/weather.config.permissions", true, true);
+        CopyDirFiles($_SERVER['DOCUMENT_ROOT']."/bitrix/modules/".$this->MODULE_ID."/install/components/weather.day/", $_SERVER['DOCUMENT_ROOT']."/bitrix/components/awz/weather.day", true, true);
         return true;
     }
 
     function UnInstallFiles()
     {
         DeleteDirFilesEx("/bitrix/components/awz/weather.config.permissions");
+        DeleteDirFilesEx("/bitrix/components/awz/weather.day");
         return true;
     }
 
