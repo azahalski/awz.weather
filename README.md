@@ -1,4 +1,4 @@
-# AWZ: Права доступа (awz.weather)
+# AWZ: Загрузка погоды (awz.weather)
 
 <!-- desc-start -->
 
