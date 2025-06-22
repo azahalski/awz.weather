@@ -105,11 +105,8 @@ class AwzWeatherDayComponent extends CBitrixComponent implements Controllerable,
             if (\Bitrix\Main\Loader::includeModule('awz.weather')) {
                 $mapData = unserialize($this->arParams['~MAP_DATA'], ['allowed_classes'=>false]);
                 $app = new \Awz\Weather\App();
+                $app->getCurrent((float)$mapData['google_lat'], (float)$mapData['google_lon']);
                 $this->arResult['DAY'] = $app->getMinDay((float)$mapData['google_lat'], (float)$mapData['google_lon'], strtotime($this->arParams['DATE']));
-                if(empty($this->arResult['DAY'])){
-                    $app->getCurrent((float)$mapData['google_lat'], (float)$mapData['google_lon']);
-                    $this->arResult['DAY'] = $app->getMinDay((float)$mapData['google_lat'], (float)$mapData['google_lon'], strtotime($this->arParams['DATE']));
-                }
                 for($i=0;$i<7;$i++){
                     $this->arResult['CURRENT_WEEK'][] = $app->getMinDay((float)$mapData['google_lat'], (float)$mapData['google_lon'], time()+86400*$i);
                 }
