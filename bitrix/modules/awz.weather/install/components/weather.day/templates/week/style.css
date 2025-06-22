@@ -1,0 +1,33 @@
+.awz-weather__block {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.awz-weather__card {
+    text-align:center;
+    padding:1rem;border:1px solid #ededed;border-radius:8px;
+    background:#ededed;
+    margin-bottom:0.8rem;
+    font-size:0.9rem;
+    max-width:160px;
+    width:100%;
+}
+.awz-weather__card-item-text-s {
+    font-weight: 500;
+    display:block;
+    clear:both;
+    margin-bottom:0.5rem;
+}
+.awz-weather__card-item-icon {
+    display:block;
+    clear:both;
+}
+.awz-weather__card-item-temp {
+    font-weight: 800;
+    display:block;
+    clear:both;
+    margin-top:0.5rem;
+}
