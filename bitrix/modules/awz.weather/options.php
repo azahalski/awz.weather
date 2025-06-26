@@ -55,7 +55,7 @@ $tabControl->Begin();
         $tabControl->BeginNextTab();
         Extension::load("ui.alerts");
         ?>
-
+        <?if(Option::get($module_id, "show_add", "N","")=='Y'){?>
         <tr>
             <td style="width:200px;"><?=Loc::getMessage('AWZ_WEATHER_OPT_KEY_TITLE')?></td>
             <td>
@@ -84,6 +84,7 @@ $tabControl->Begin();
                 <input type="text" value="<?=htmlspecialcharsEx($val)?>" name="KEY_WeatherStack"></td>
             </td>
         </tr>
+        <?}?>
         <tr>
             <td style="width:200px;"><?=Loc::getMessage('AWZ_WEATHER_OPT_MAX_DAYS_TITLE')?></td>
             <td>
